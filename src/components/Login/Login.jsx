@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+import * as S from "./Login.style";
 
 const Login = () => {
   const [idValue, setIdValue] = useState("");
@@ -11,35 +11,33 @@ const Login = () => {
     }
   };
   return (
-    <div className="MainLayout">
-      <div className="Box">
-        <p className="LoginTitle">로그인</p>
-        <div className="InputWrap">
-          <p>아이디</p>
-          <input
-            className="Input"
+    <S.MainLayout>
+      <S.Box>
+        <S.LoginTitle>만나서 반가워요!</S.LoginTitle>
+        <br></br>
+        <S.InputWrap>
+          <S.Input
             type="text"
-            placeholder="아이디를 입력해주세요."
+            placeholder="아이디를 입력하세요."
             value={idValue}
             onChange={(e) => setIdValue(e.target.value)}
           />
-        </div>
-        <div className="InputWrap">
-          <p>비밀번호</p>
-          <input
-            className="Input"
+        </S.InputWrap>
+        <S.InputWrap>
+          <S.Input
             type="password"
-            placeholder="비밀번호를 입력해주세요."
+            placeholder="비밀번호를 입력하세요."
             value={passwordValue}
             onChange={(e) => setPasswordValue(e.target.value)}
           />
-        </div>
-        <button className="LoginButton" onClick={OnclickHandler}>
+        </S.InputWrap>
+        <S.LoginButton onClick={OnclickHandler}>
           로그인
-        </button>
-        <p>계정이 없으신가요?</p>
-      </div>
-    </div>
+        </S.LoginButton>
+        <br></br>
+        <S.SignUpButton>회원가입</S.SignUpButton>
+      </S.Box>
+    </S.MainLayout>
   );
 };
 
